@@ -2,10 +2,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Default configuration -->
   <meta charset="utf-8">
-  <title>Zappiermike's Website</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Custom configurations -->
+  <link rel="stylesheet" href="static/css/styles.css">
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <title>{% block title %} Zappiermike Website {% endblock %}</title>
 </head>
 <body>
-  <h1>This is the {{ title_page }} page!</h1>
+    {% block body %}{% endblock %}
 </body>
 </html>
