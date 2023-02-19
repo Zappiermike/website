@@ -40,11 +40,9 @@ function App() {
   );
 }
 
-class LikeButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { liked: false };
-  }
+const aboutButton = 
+
+function likeButton(){
 
   render() {
     if (this.state.liked) {
@@ -58,7 +56,3 @@ class LikeButton extends React.Component {
     );
   }
 }
-
-const navBarTag = document.querySelector('#navigationBar');
-const root = ReactDOM.createRoot(navBarTag);
-root.render(e(LikeButton));
