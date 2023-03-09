@@ -5,6 +5,13 @@ h1 {
     padding: 10px;
 }
 
+.aboutpage-h1 {
+    color: #121212;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 4rem;
+}
+
 .homepage-h1 {
     color: #121212;
     font-family: 'Oswald', sans-serif;
@@ -14,6 +21,10 @@ h1 {
 
 .homepage-container {
     background-color: #F5F5F5;
+}
+
+.bgg {
+    background-color: green;
 }
 
 h5 {
@@ -60,3 +71,11 @@ overflow: hidden;
      transform: translate(0px);
     }
    }
+
+/* ********** */
+/* ABOUT PAGE */
+/* ********** */
+
+.about-left-col {
+    margin-top: 10%;
+}
