@@ -1,21 +1,38 @@
-console.log("HELLO WORLD");
 
-let octokit = new Octokit({ });
+
 const username = "Zappiermike"
-// const token = retrieve_token()
 
-// await octokit.request("GET /users/{username}/repos", {
-//     username: 'USERNAME',
-//     headers: {
-//       'X-GitHub-Api-Version': '2022-11-28'
-//     }
+
+ReactDOM.render(<Hello />, document.querySelector('#start'));
+console.log("Hello world");
+
+
+
+// Functions
+function Hello() {
+    return (
+      <ul>
+        <li>Hi World!</li>
+      </ul>
+    );
+  }
+
+
+
+
+// Deprecated Javascript
+// import { Octokit, App } from "https://cdn.skypack.dev/octokit";
+// let octokit = new Octokit({
+//     auth: retrieve_token()
+//  });
+// const github_content = await octokit.request("GET /users/{username}/repos", {
+//     username: username,
 // });
-
-function retrieve_token(){
-    const url = "/oats";
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-           console.log("My data is: ", data); 
-        });
-}
+// function retrieve_token(){
+//     const url = "/oauth_gh_token";
+//     fetch(url)
+//         .then(response => response.text())
+//         .then(data => {
+//                 return data;
+//         });
+// }
