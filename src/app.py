@@ -3,13 +3,13 @@
 import flask
 import os
 import json
+import requests
 
 os.environ["FLASK_APP"] = str(__name__)
 os.environ["FLASK_DEBUG"] = "true"
 rootpath = os.path.abspath(os.path.join(os.getcwd(), '..'))
 
 app = flask.Flask(__name__, root_path=rootpath)
-print(app.root_path)
 
 @app.route("/")
 def render_homepage():
@@ -23,12 +23,22 @@ def render_about():
 def render_projects():
     return flask.render_template("projects.html")
 
-@app.route("/oauth_gh_token")
+@app.route("/github_repositories", methods=["POST", "GET"])
+def gh_repos():
+    username = "zappiermike"
+    token = retrieve_github_token()
+    Headers = {
+        'X-GitHub-Api-Version': '2022-11-28',
+        'Authorization': 'token ' + token
+    }
+    # print(Headers)
+    repo_list = requests.get(f"https://api.github.com/users/{username}/repos", headers=Headers)
+    return {"repo_list": repo_list.json()}
+
+
+
 def retrieve_github_token():
-    with open(f"{rootpath}/static/tokens.json") as f:
-        data = json.load(f)
-        token = data.get("github_full_access", None)
-        if token is not None:
-            return token
-        else:
-            return "None"
+    token = os.environ.get("GITHUB_TOKEN", None)
+    # print(token)
+    return token
+
