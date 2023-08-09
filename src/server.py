@@ -31,14 +31,11 @@ def gh_repos():
         'X-GitHub-Api-Version': '2022-11-28',
         'Authorization': 'token ' + token
     }
-    # print(Headers)
     repo_list = requests.get(f"https://api.github.com/users/{username}/repos", headers=Headers)
     return {"repo_list": repo_list.json()}
 
 
-
 def retrieve_github_token():
     token = os.environ.get("GITHUB_TOKEN", None)
-    # print(token)
     return token
 
