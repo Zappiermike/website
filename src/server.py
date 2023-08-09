@@ -39,3 +39,5 @@ def retrieve_github_token():
     token = os.environ.get("GITHUB_TOKEN", None)
     return token
 
+if __name__ == '__main__':
+    app.run()

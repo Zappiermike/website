@@ -9,8 +9,6 @@ function getRepoList(){
         list = data.promise
     })
 }
-    
-
 
 function RepoCardRow(props) {
     getRepoList()
